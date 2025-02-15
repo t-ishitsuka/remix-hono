@@ -1,8 +1,8 @@
 name: remix-hono-template
 
 services:
-  remix-hono-node:
-    container_name: remix-hono-node
+  node:
+    container_name: node
     build:
       context: .
       dockerfile: ./docker/localhost/node/Dockerfile
