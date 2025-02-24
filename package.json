@@ -5,8 +5,7 @@
   "author": "Aprire",
   "private": true,
   "scripts": {
-    "dev": "turbo dev",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "dev": "turbo dev"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {
@@ -14,5 +13,8 @@
     "npm": "Use pnpm package manager.",
     "yarn": "Use pnpm package manager.",
     "pnpm": ">=10.4.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
   }
 }

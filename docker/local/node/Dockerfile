@@ -10,12 +10,15 @@ ENV TZ Asia/Tokyo
 # Update & install system packages
 RUN apt-get update
 RUN apt-get install -y \
-    procps \
-    less \
-    vim \
     curl \
+    less \
+    lsof \
+    procps \
+    sudo \
     unzip \
-    sudo
+    vim
+
+RUN echo "node ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Install global node packages
 RUN npm install -g pnpm@10.4.1
