@@ -5,7 +5,12 @@
   "author": "Aprire",
   "private": true,
   "scripts": {
+    "build": "turbo build",
     "dev": "turbo dev"
+  },
+  "devDependencies": {
+    "@remix-hono-packages/typescript-config": "workspace:^",
+    "@biomejs/biome": "1.9.4"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {
@@ -13,8 +18,5 @@
     "npm": "Use pnpm package manager.",
     "yarn": "Use pnpm package manager.",
     "pnpm": ">=10.4.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4"
   }
 }
