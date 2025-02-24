@@ -1,0 +1,3 @@
+{
+  "extends": "@remix-hono-packages/typescript-config/base.json"
+}
