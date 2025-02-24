@@ -1,19 +1,22 @@
 name: remix-hono-template
 
-services:
-  node:
-    container_name: node
-    build:
-      context: .
-      dockerfile: ./docker/localhost/node/Dockerfile
-    ports:
-      - 80:3000
-    tty: true
-    volumes:
-      - .:/app
-    networks:
-      - remix-hono-network
-
 networks:
   remix-hono-network:
     external: true
+
+x-defaults: &defaults
+  tty: true
+  networks:
+    - remix-hono-network
+
+services:
+  node:
+    <<: *defaults
+    container_name: node
+    build:
+      context: .
+      dockerfile: ./docker/local/node/Dockerfile
+    ports:
+      - 80:3000
+    volumes:
+      - .:/app
