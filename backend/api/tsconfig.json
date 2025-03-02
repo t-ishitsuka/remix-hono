@@ -1,9 +1,0 @@
-{
-  "extends": "@remix-hono-packages/typescript-config/base.json",
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "types": ["node"],
-    "jsxImportSource": "hono/jsx"
-  }
-}
