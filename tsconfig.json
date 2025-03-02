@@ -1,0 +1,3 @@
+{
+  "extends": "@remix-hono-package/tsconfig/base-config.json"
+}
