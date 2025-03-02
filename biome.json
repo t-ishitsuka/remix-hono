@@ -1,0 +1,3 @@
+{
+  "extends": ["@remix-hono-package/biomeconfig/biome.json"]
+}
