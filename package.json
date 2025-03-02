@@ -12,10 +12,8 @@
     "yarn": "Use pnpm package manager.",
     "pnpm": ">=10.4.1"
   },
-  "dependencies": {
-    "@remix-hono-package/tsconfig": "workspace:^"
-  },
   "devDependencies": {
+    "@remix-hono-package/tsconfig": "workspace:^",
     "@biomejs/biome": "1.9.4",
     "typescript": "^5.8.2"
   }

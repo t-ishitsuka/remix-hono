@@ -14,11 +14,11 @@
   },
   "type": "module",
   "dependencies": {
-    "@remix-hono-package/tsconfig": "workspace:^",
     "@hono/node-server": "^1.13.8",
     "hono": "^4.7.2"
   },
   "devDependencies": {
+    "@remix-hono-package/tsconfig": "workspace:^",
     "@types/node": "^20.11.17",
     "tsx": "^4.7.1",
     "typescript": "^5.8.2"

@@ -7,14 +7,13 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@remix-hono-package/tsconfig':
-        specifier: workspace:^
-        version: link:packages/tsconfig
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
+      '@remix-hono-package/tsconfig':
+        specifier: workspace:^
+        version: link:packages/tsconfig
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -24,13 +23,13 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.8
         version: 1.13.8(hono@4.7.2)
-      '@remix-hono-package/tsconfig':
-        specifier: workspace:^
-        version: link:../../packages/tsconfig
       hono:
         specifier: ^4.7.2
         version: 4.7.2
     devDependencies:
+      '@remix-hono-package/tsconfig':
+        specifier: workspace:^
+        version: link:../../packages/tsconfig
       '@types/node':
         specifier: ^20.11.17
         version: 20.17.22
