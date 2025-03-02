@@ -1,5 +1,9 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
+import { hc } from "hono/client";
+import type { AppRouteType } from "../../../../backend/api/src/index";
+
+const client = hc<AppRouteType>("http://localhost:3000");
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -8,6 +12,12 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
+export async function loader() {
+  const response = await client.index.$get();
+  return response.json();
+}
+
+export default function Home({ loaderData }: Route.ComponentProps) {
+  console.log(loaderData);
   return <Welcome />;
 }

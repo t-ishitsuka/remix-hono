@@ -3,8 +3,8 @@ import { Hono } from "hono";
 
 const app = new Hono();
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
+const appRoute = app.get("/", (c) => {
+  return c.json({ message: "Hello, World!" });
 });
 
 serve(
@@ -16,3 +16,9 @@ serve(
     console.log(`Server is running on http://localhost:${info.port}`);
   }
 );
+
+export type AppRouteType = typeof appRoute;
+
+// 次にやりたい
+// hc client を packages から取得する
+//
