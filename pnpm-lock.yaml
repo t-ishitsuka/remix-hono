@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@remix-hono-package/biomeconfig':
-        specifier: workspace:^
-        version: link:packages/biomeconfig
       '@remix-hono-package/tsconfig':
         specifier: workspace:^
         version: link:packages/tsconfig
