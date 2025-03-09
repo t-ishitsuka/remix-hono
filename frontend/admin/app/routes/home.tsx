@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-import { apiCLient } from "@remix-hono-package/rpc/src/api";
+import { apiClient } from "@remix-hono-package/rpc/src/api";
 
 // biome-ignore lint/correctness/noEmptyPattern: <explanation>
 export function meta({}: Route.MetaArgs) {
@@ -11,14 +11,14 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader() {
-  const response = await apiCLient.index.$get();
+  const response = await apiClient.index.$get();
 
   return { message1: (await response.json()).message, message2: "" };
 }
 
 export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
   const serverData = await serverLoader();
-  const response = await apiCLient.hello.$get();
+  const response = await apiClient.hello.$get();
 
   return { ...serverData, message2: (await response.json()).message };
 }
