@@ -1,21 +1,24 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import { healthCheckApp } from "./routes/healthCheck.js";
 
-const apiV1 = new Hono().basePath("/api/v1");
+const app = new Hono();
 
-apiV1
-  .get("/", (c) => {
-    return c.text("Hello Hono!");
-  })
-  .route("/health-check", healthCheckApp);
+const appRoute = app.get("/", (c) => {
+  return c.json({ message: "Hello, World!" });
+});
 
 serve(
   {
-    fetch: apiV1.fetch,
+    fetch: app.fetch,
     port: 3000,
   },
   (info) => {
     console.log(`Server is running on http://localhost:${info.port}`);
   }
 );
+
+export type AppRouteType = typeof appRoute;
+
+// 次にやりたい
+// hc client を packages から取得する
+//

@@ -1,5 +1,5 @@
 {
-  "extends": "@remix-hono-packages/typescript-config/base.json",
+  "extends": "@remix-hono-package/tsconfig/base-config.json",
   "include": [
     "**/*",
     "**/.server/**/*",

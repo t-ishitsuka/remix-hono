@@ -1,5 +1,5 @@
 {
-  "name": "@remix-hono-frontend/web",
+  "name": "@remix-hono-package/ui",
   "version": "0.1.0",
   "scripts": {
     "build": "echo \"$npm_package_name: No build script specified\" && exit 0",

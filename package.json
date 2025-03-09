@@ -1,16 +1,9 @@
 {
   "name": "remix-hono",
-  "version": "0.1.0-alpha",
-  "description": "Remix(React-Router) + Hono = Remix-Hono",
-  "author": "Aprire",
-  "private": true,
+  "version": "0.1.0",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev"
-  },
-  "devDependencies": {
-    "@remix-hono-packages/typescript-config": "workspace:^",
-    "@biomejs/biome": "1.9.4"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {
@@ -18,5 +11,10 @@
     "npm": "Use pnpm package manager.",
     "yarn": "Use pnpm package manager.",
     "pnpm": ">=10.4.1"
+  },
+  "devDependencies": {
+    "@remix-hono-package/tsconfig": "workspace:^",
+    "@biomejs/biome": "1.9.4",
+    "typescript": "^5.8.2"
   }
 }

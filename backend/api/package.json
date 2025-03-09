@@ -1,15 +1,26 @@
 {
-  "name": "@remix-hono/backend-api",
-  "type": "module",
+  "name": "@remix-hono-backend/api",
+  "version": "0.1.0",
   "scripts": {
+    "build": "tsc",
     "dev": "tsx watch src/index.ts"
   },
+  "packageManager": "pnpm@10.4.1",
+  "engines": {
+    "node": ">=22.14",
+    "npm": "Use pnpm package manager.",
+    "yarn": "Use pnpm package manager.",
+    "pnpm": ">=10.4.1"
+  },
+  "type": "module",
   "dependencies": {
     "@hono/node-server": "^1.13.8",
     "hono": "^4.7.2"
   },
   "devDependencies": {
+    "@remix-hono-package/tsconfig": "workspace:^",
     "@types/node": "^20.11.17",
-    "tsx": "^4.7.1"
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.2"
   }
 }
