@@ -2,6 +2,13 @@
   "extends": "@remix-hono-package/tsconfig/hono-config.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "types": ["node", "vite/client"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   }
 }

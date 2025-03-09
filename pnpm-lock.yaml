@@ -154,9 +154,6 @@ importers:
       '@remix-hono-backend/api':
         specifier: workspace:^
         version: link:../../backend/api
-      dotenv:
-        specifier: 'catalog:'
-        version: 16.4.7
       hono:
         specifier: 'catalog:'
         version: 4.7.2
