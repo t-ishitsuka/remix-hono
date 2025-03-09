@@ -1,7 +1,18 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 
 const app = new Hono();
+
+app.use(
+  "*",
+  cors({
+    origin: "*",
+    allowMethods: ["GET", "POST", "PUT", "DELETE"],
+    allowHeaders: ["Content-Type"],
+    maxAge: 86400,
+  })
+);
 
 const apiRoute = app
   .get("/", (c) => {

@@ -14,11 +14,12 @@
   },
   "dependencies": {
     "@remix-hono-backend/api": "workspace:^",
-    "hono": "^4.7.2"
+    "dotenv": "catalog:",
+    "hono": "catalog:"
   },
   "devDependencies": {
     "@remix-hono-package/tsconfig": "workspace:^",
-    "@types/node": "^20.11.17",
-    "typescript": "^5.8.2"
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
   }
 }

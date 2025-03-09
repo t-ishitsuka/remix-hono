@@ -4,18 +4,39 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@biomejs/biome':
+      specifier: 1.9.4
+      version: 1.9.4
+    '@types/node':
+      specifier: ^20.11.17
+      version: 20.17.22
+    dotenv:
+      specifier: ^16.4.7
+      version: 16.4.7
+    hono:
+      specifier: ^4.7.2
+      version: 4.7.2
+    tsx:
+      specifier: ^4.7.1
+      version: 4.19.3
+    typescript:
+      specifier: ^5.8.2
+      version: 5.8.2
+
 importers:
 
   .:
     devDependencies:
       '@biomejs/biome':
-        specifier: 1.9.4
+        specifier: 'catalog:'
         version: 1.9.4
       '@remix-hono-package/tsconfig':
         specifier: workspace:^
         version: link:packages/tsconfig
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
   backend/api:
@@ -23,21 +44,24 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.8
         version: 1.13.8(hono@4.7.2)
+      dotenv:
+        specifier: 'catalog:'
+        version: 16.4.7
       hono:
-        specifier: ^4.7.2
+        specifier: 'catalog:'
         version: 4.7.2
     devDependencies:
       '@remix-hono-package/tsconfig':
         specifier: workspace:^
         version: link:../../packages/tsconfig
       '@types/node':
-        specifier: ^20.11.17
+        specifier: 'catalog:'
         version: 20.17.22
       tsx:
-        specifier: ^4.7.1
+        specifier: 'catalog:'
         version: 4.19.3
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
   frontend/admin:
@@ -74,7 +98,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.9(vite@5.4.14(@types/node@20.17.22)(lightningcss@1.29.1))
       '@types/node':
-        specifier: ^20
+        specifier: 'catalog:'
         version: 20.17.22
       '@types/react':
         specifier: ^19.0.1
@@ -89,7 +113,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.9
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
       vite:
         specifier: ^5.4.11
@@ -101,22 +125,22 @@ importers:
   frontend/web:
     devDependencies:
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
   packages/biomeconfig:
     devDependencies:
       '@biomejs/biome':
-        specifier: 1.9.4
+        specifier: 'catalog:'
         version: 1.9.4
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
   packages/database:
     devDependencies:
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
   packages/rpc:
@@ -124,30 +148,33 @@ importers:
       '@remix-hono-backend/api':
         specifier: workspace:^
         version: link:../../backend/api
+      dotenv:
+        specifier: 'catalog:'
+        version: 16.4.7
       hono:
-        specifier: ^4.7.2
+        specifier: 'catalog:'
         version: 4.7.2
     devDependencies:
       '@remix-hono-package/tsconfig':
         specifier: workspace:^
         version: link:../tsconfig
       '@types/node':
-        specifier: ^20.11.17
+        specifier: 'catalog:'
         version: 20.17.22
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
   packages/tsconfig:
     devDependencies:
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
   packages/ui:
     devDependencies:
       typescript:
-        specifier: ^5.8.2
+        specifier: 'catalog:'
         version: 5.8.2
 
 packages:
@@ -1566,6 +1593,10 @@ packages:
 
   dom-helpers@3.4.0:
     resolution: {integrity: sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==}
+
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+    engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -3920,6 +3951,8 @@ snapshots:
   dom-helpers@3.4.0:
     dependencies:
       '@babel/runtime': 7.26.9
+
+  dotenv@16.4.7: {}
 
   dunder-proto@1.0.1:
     dependencies:

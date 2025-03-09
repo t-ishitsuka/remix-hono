@@ -13,17 +13,21 @@ export function meta({}: Route.MetaArgs) {
 export async function loader() {
   const response = await apiCLient.index.$get();
 
-  return { message1: (await response.json()).message };
+  return { message1: (await response.json()).message, message2: "" };
 }
 
-// export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
-//   const serverData = await serverLoader();
-//   const response = await apiCLient.hello.$get();
+export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
+  const serverData = await serverLoader();
+  const response = await apiCLient.hello.$get();
 
-//   return { ...serverData, messege2: (await response.json()).message };
-// }
+  return { ...serverData, message2: (await response.json()).message };
+}
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-  console.log(loaderData);
-  return <Welcome />;
+  const { message1, message2 } = loaderData;
+
+  console.log(message1);
+  console.log(message2);
+
+  return <Welcome world={message1} hono={message2} />;
 }

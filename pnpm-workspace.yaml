@@ -2,3 +2,11 @@ packages:
   - "backend/*"
   - "frontend/*"
   - "packages/*"
+
+catalog:
+  "@biomejs/biome": 1.9.4
+  "@types/node": ^20.11.17
+  dotenv: ^16.4.7
+  hono: ^4.7.2
+  tsx: ^4.7.1
+  typescript: ^5.8.2
