@@ -1,6 +1,3 @@
 {
-  "extends": "@remix-hono-package/tsconfig/hono-config.json",
-  "compilerOptions": {
-    "outDir": "./dist"
-  }
+  "extends": "@remix-hono-package/tsconfig/hono-config.json"
 }

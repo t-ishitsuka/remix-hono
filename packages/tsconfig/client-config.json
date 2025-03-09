@@ -1,0 +1,16 @@
+{
+  "extends": "./base-config.json",
+  "compilerOptions": {
+    "jsxImportSource": "hono/jsx",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "target": "ES2022",
+    "types": ["node", "vite/client"],
+    "verbatimModuleSyntax": false
+  },
+  "exclude": ["node_modules", "dist"]
+}
