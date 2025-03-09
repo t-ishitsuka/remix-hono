@@ -13,7 +13,7 @@
     "pnpm": ">=10.4.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "typescript": "^5.8.2"
+    "@biomejs/biome": "catalog:",
+    "typescript": "catalog:"
   }
 }

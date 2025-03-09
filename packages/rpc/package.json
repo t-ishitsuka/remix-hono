@@ -2,7 +2,7 @@
   "name": "@remix-hono-package/rpc",
   "version": "0.1.0",
   "scripts": {
-    "build": "tsc",
+    "build": "vite build",
     "dev": "echo \"$npm_package_name: No dev script specified\" && exit 0"
   },
   "packageManager": "pnpm@10.4.1",
@@ -12,13 +12,16 @@
     "yarn": "Use pnpm package manager.",
     "pnpm": ">=10.4.1"
   },
+  "type": "module",
   "dependencies": {
     "@remix-hono-backend/api": "workspace:^",
-    "hono": "^4.7.2"
+    "hono": "catalog:"
   },
   "devDependencies": {
     "@remix-hono-package/tsconfig": "workspace:^",
-    "@types/node": "^20.11.17",
-    "typescript": "^5.8.2"
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-tsconfig-paths": "catalog:"
   }
 }

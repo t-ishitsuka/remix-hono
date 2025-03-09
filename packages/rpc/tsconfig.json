@@ -1,12 +1,14 @@
 {
-  "extends": "@remix-hono-package/tsconfig/base-config.json",
+  "extends": "@remix-hono-package/tsconfig/hono-config.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "types": ["node"],
-    "jsxImportSource": "hono/jsx",
     "outDir": "./dist",
-    "verbatimModuleSyntax": false
-  },
-  "exclude": ["node_modules", "dist"]
+    "verbatimModuleSyntax": false,
+    "types": ["node", "vite/client"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  }
 }

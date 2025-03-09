@@ -1,0 +1,10 @@
+{
+  "extends": "./base-config.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "types": ["node"],
+    "jsxImportSource": "hono/jsx"
+  },
+  "exclude": ["node_modules", "dist"]
+}
