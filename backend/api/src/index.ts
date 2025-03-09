@@ -3,9 +3,13 @@ import { Hono } from "hono";
 
 const app = new Hono();
 
-const appRoute = app.get("/", (c) => {
-  return c.json({ message: "Hello, World!" });
-});
+const apiRoute = app
+  .get("/", (c) => {
+    return c.json({ message: "Hello, World!" });
+  })
+  .get("/hello", (c) => {
+    return c.json({ message: "Hello, Hono!" });
+  });
 
 serve(
   {
@@ -17,8 +21,4 @@ serve(
   }
 );
 
-export type AppRouteType = typeof appRoute;
-
-// 次にやりたい
-// hc client を packages から取得する
-//
+export type ApiRouteType = typeof apiRoute;

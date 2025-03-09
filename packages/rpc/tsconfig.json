@@ -1,0 +1,12 @@
+{
+  "extends": "@remix-hono-package/tsconfig/base-config.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "types": ["node"],
+    "jsxImportSource": "hono/jsx",
+    "outDir": "./dist",
+    "verbatimModuleSyntax": false
+  },
+  "exclude": ["node_modules", "dist"]
+}
