@@ -48,12 +48,9 @@ importers:
       '@react-router/serve':
         specifier: ^7.2.0
         version: 7.2.0(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.8.2)
-      '@remix-hono-backend/api':
+      '@remix-hono-package/rpc':
         specifier: workspace:^
-        version: link:../../backend/api
-      hono:
-        specifier: ^4.7.2
-        version: 4.7.2
+        version: link:../../packages/rpc
       isbot:
         specifier: ^5.1.17
         version: 5.1.23
@@ -118,6 +115,25 @@ importers:
 
   packages/database:
     devDependencies:
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+
+  packages/rpc:
+    dependencies:
+      '@remix-hono-backend/api':
+        specifier: workspace:^
+        version: link:../../backend/api
+      hono:
+        specifier: ^4.7.2
+        version: 4.7.2
+    devDependencies:
+      '@remix-hono-package/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
+      '@types/node':
+        specifier: ^20.11.17
+        version: 20.17.22
       typescript:
         specifier: ^5.8.2
         version: 5.8.2

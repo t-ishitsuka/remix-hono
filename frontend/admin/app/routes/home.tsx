@@ -1,10 +1,8 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-import { hc } from "hono/client";
-import type { AppRouteType } from "../../../../backend/api/src/index";
+import { apiCLient } from "@remix-hono-package/rpc/src/api";
 
-const client = hc<AppRouteType>("http://localhost:3000");
-
+// biome-ignore lint/correctness/noEmptyPattern: <explanation>
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -13,9 +11,17 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader() {
-  const response = await client.index.$get();
-  return response.json();
+  const response = await apiCLient.index.$get();
+
+  return { message1: (await response.json()).message };
 }
+
+// export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
+//   const serverData = await serverLoader();
+//   const response = await apiCLient.hello.$get();
+
+//   return { ...serverData, messege2: (await response.json()).message };
+// }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   console.log(loaderData);
