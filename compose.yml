@@ -19,5 +19,6 @@ services:
     ports:
       - 3000:3000
       - 80:5173
+      - 8000:5174
     volumes:
       - .:/app

@@ -14,7 +14,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@hono/node-server": "^1.13.8",
+    "@hono/node-server": "catalog:",
     "dotenv": "catalog:",
     "hono": "catalog:"
   },
