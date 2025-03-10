@@ -1,10 +1,11 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base-config.json",
+  "display": "HONO",
   "compilerOptions": {
-    "target": "ESNext",
+    "jsxImportSource": "hono/jsx",
     "module": "NodeNext",
-    "types": ["node"],
-    "jsxImportSource": "hono/jsx"
-  },
-  "exclude": ["node_modules", "dist"]
+    "target": "ESNext",
+    "types": ["node"]
+  }
 }

@@ -1,14 +1,13 @@
 {
-  "extends": "@remix-hono-package/tsconfig/hono-config.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@remix-hono-package/tsconfig/client-config.json",
+  "display": "RPC",
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "./dist",
-    "verbatimModuleSyntax": false,
-    "types": ["node", "vite/client"],
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "bundler",
     "paths": {
       "~/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }
