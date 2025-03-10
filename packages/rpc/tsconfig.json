@@ -1,3 +1,13 @@
 {
-  "extends": "@remix-hono-package/tsconfig/client-config.json"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@remix-hono-package/tsconfig/client-config.json",
+  "display": "RPC",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
 }

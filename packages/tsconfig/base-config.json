@@ -1,7 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "DEFAULT",
   "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "incremental": false,
+    "isolatedModules": true,
     "jsx": "react-jsx",
+    "moduleDetection": "force",
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "verbatimModuleSyntax": true

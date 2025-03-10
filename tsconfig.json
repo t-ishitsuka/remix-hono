@@ -1,3 +1,5 @@
 {
-  "extends": "@remix-hono-package/tsconfig/base-config.json"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@remix-hono-package/tsconfig/base-config.json",
+  "display": "ROOT"
 }

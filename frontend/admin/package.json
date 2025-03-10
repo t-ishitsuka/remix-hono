@@ -27,12 +27,12 @@
   "devDependencies": {
     "@remix-hono-package/tsconfig": "workspace:^",
     "@react-router/dev": "^7.2.0",
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/vite": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "react-router-devtools": "^1.1.0",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-tsconfig-paths": "catalog:"
