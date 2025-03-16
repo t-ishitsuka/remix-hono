@@ -1,18 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@remix-hono-package/tsconfig/base-config.json",
+  "extends": "./base-config.json",
   "display": "UI",
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["node", "vite/client"],
-    "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "bundler",
-    "rootDir": ".",
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./src/*"]
-    },
-    "noEmit": true
+    "noEmit": true,
+    "target": "ES2022",
+    "types": ["node", "vite/client"]
   }
 }

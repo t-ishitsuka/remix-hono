@@ -120,6 +120,9 @@ importers:
       '@remix-hono-package/rpc':
         specifier: workspace:^
         version: link:../../packages/rpc
+      '@remix-hono-package/ui':
+        specifier: workspace:^
+        version: link:../../packages/ui
       isbot:
         specifier: 'catalog:'
         version: 5.1.23
@@ -272,10 +275,32 @@ importers:
         version: 5.8.2
 
   packages/ui:
+    dependencies:
+      react:
+        specifier: 'catalog:'
+        version: 19.0.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.0.0(react@19.0.0)
     devDependencies:
+      '@remix-hono-package/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
+      '@types/node':
+        specifier: 'catalog:'
+        version: 20.17.22
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.0.10
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 19.0.4(@types/react@19.0.10)
       typescript:
         specifier: 'catalog:'
         version: 5.8.2
+      vite:
+        specifier: 'catalog:'
+        version: 5.4.14(@types/node@20.17.22)(lightningcss@1.29.1)
 
 packages:
 
