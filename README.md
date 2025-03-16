@@ -3,8 +3,10 @@
 [x] install hono
 [x] install remix
 [x] setup rpc
+[x] web/admin remix
+[x] web/admin tsconfig
 [] install shadcn
 [] setup ui
-[] storybook
+[] setup storybook
 [] admin login page
 [] admin login jwt
