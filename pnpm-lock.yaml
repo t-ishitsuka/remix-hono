@@ -276,12 +276,18 @@ importers:
 
   packages/ui:
     dependencies:
+      '@tailwindcss/vite':
+        specifier: 'catalog:'
+        version: 4.0.9(vite@5.4.14(@types/node@20.17.22)(lightningcss@1.29.1))
       react:
         specifier: 'catalog:'
         version: 19.0.0
       react-dom:
         specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.0.9
     devDependencies:
       '@remix-hono-package/tsconfig':
         specifier: workspace:^

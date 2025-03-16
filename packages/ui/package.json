@@ -14,8 +14,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@tailwindcss/vite": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "tailwindcss": "catalog:"
   },
   "devDependencies": {
     "@remix-hono-package/tsconfig": "workspace:^",
