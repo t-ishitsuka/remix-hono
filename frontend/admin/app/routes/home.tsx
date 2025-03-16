@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
 import { apiClient } from "@remix-hono-package/rpc/src/api";
+import { UiText } from "@remix-hono-package/ui/src/UiText";
 
 // biome-ignore lint/correctness/noEmptyPattern: <explanation>
 export function meta({}: Route.MetaArgs) {
@@ -29,5 +30,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   console.log(message1);
   console.log(message2);
 
-  return <Welcome world={message1} hono={message2} />;
+  return (
+    <>
+      <Welcome world={message1} hono={message2} />
+      <UiText />
+    </>
+  );
 }
