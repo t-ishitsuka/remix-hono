@@ -6,7 +6,7 @@
 [x] web/admin remix
 [x] web/admin tsconfig
 [x] tailwind
-[] install shadcn
+[x] install shadcn
 [] setup ui
 [] setup storybook
 [] admin login page
