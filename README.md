@@ -5,7 +5,8 @@
 [x] setup rpc
 [x] web/admin remix
 [x] web/admin tsconfig
-[] install shadcn
+[x] tailwind
+[x] install shadcn
 [] setup ui
 [] setup storybook
 [] admin login page
