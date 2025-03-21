@@ -2,7 +2,7 @@ import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
 import { apiClient } from "@remix-hono-package/rpc/src/api";
 import { UiText } from "@remix-hono-package/ui/src/UiText";
-import { Button } from "@remix-hono-package/ui/src/components/ui/button";
+import { Button } from "@remix-hono-package/ui/src/components/ui/Button";
 
 // biome-ignore lint/correctness/noEmptyPattern: <explanation>
 export function meta({}: Route.MetaArgs) {
@@ -35,11 +35,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     <>
       <Welcome world={message1} hono={message2} />
       <UiText />
-      <Button
-        variant="destructive"
-        size="lg"
-        style={{ marginTop: "1rem", color: "red" }}
-      >
+      <Button variant="destructive" size="lg">
         Click me
       </Button>
     </>
