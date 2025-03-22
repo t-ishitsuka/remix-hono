@@ -1,6 +1,7 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
+import { apiV1Handler } from "~/presentation/handlers/api/v1/ApiV1Handler";
 
 const app = new Hono();
 
@@ -14,13 +15,7 @@ app.use(
   })
 );
 
-const apiRoute = app
-  .get("/", (c) => {
-    return c.json({ message: "Hello, World!" });
-  })
-  .get("/hello", (c) => {
-    return c.json({ message: "Hello, Hono!" });
-  });
+app.route("/", apiV1Handler);
 
 serve(
   {
@@ -31,5 +26,3 @@ serve(
     console.log(`Server is running on http://localhost:${info.port}`);
   }
 );
-
-export type ApiRouteType = typeof apiRoute;
