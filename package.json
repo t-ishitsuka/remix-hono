@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev"
+    "dev": "turbo dev",
+    "storybook": "pnpm --filter @remix-hono-frontend/story run storybook"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {

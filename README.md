@@ -7,7 +7,8 @@
 [x] web/admin tsconfig
 [x] tailwind
 [x] install shadcn
-[] setup ui
+[x] setup ui
+[x] admin
 [] setup storybook
 [] admin login page
 [] admin login jwt

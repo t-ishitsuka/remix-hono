@@ -190,6 +190,9 @@ importers:
 
   frontend/story:
     dependencies:
+      '@remix-hono-package/ui':
+        specifier: workspace:^
+        version: link:../../packages/ui
       react:
         specifier: 'catalog:'
         version: 19.0.0
@@ -224,6 +227,9 @@ importers:
       '@storybook/test':
         specifier: ^8.6.7
         version: 8.6.7(storybook@8.6.7(prettier@2.8.8))
+      '@tailwindcss/vite':
+        specifier: 'catalog:'
+        version: 4.0.9(vite@5.4.14(@types/node@20.17.22)(lightningcss@1.29.1))
       '@types/node':
         specifier: 'catalog:'
         version: 20.17.22
@@ -251,6 +257,9 @@ importers:
       storybook:
         specifier: ^8.6.7
         version: 8.6.7(prettier@2.8.8)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.0.9
       typescript:
         specifier: 'catalog:'
         version: 5.8.2

@@ -12,11 +12,14 @@ function getAbsolutePath(value: string): any {
 }
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../node_modules/@remix-hono-package/ui/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
   addons: [
+    getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-onboarding"),
-    getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/experimental-addon-test"),
   ],
   framework: {
