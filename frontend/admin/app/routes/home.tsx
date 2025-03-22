@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-import { apiClient } from "@remix-hono-package/rpc/src/api";
+import { healthCheckClient } from "@remix-hono-package/rpc/src/api";
 import { UiText } from "@remix-hono-package/ui/src/UiText";
 import { Button } from "@remix-hono-package/ui/src/components/ui/Button";
 
@@ -13,21 +13,20 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader() {
-  const response = await apiClient.index.$get();
+  const response = await healthCheckClient.api.v1["health-check"].$get();
 
   return { message1: (await response.json()).message, message2: "" };
 }
 
 export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
   const serverData = await serverLoader();
-  const response = await apiClient.hello.$get();
+  const response = await healthCheckClient.api.v1["health-check"][2].$get();
 
   return { ...serverData, message2: (await response.json()).message };
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   const { message1, message2 } = loaderData;
-
   console.log(message1);
   console.log(message2);
 

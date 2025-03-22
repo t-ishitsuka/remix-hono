@@ -1,5 +1,1 @@
-import { apiClient } from "~/api";
-
-export const client = {
-  api: apiClient,
-};
+export * from "~/api";
