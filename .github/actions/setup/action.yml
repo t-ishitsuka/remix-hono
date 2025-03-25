@@ -12,7 +12,6 @@ runs:
   using: composite
   steps:
     - name: Setup Node.js v.${{ inputs.node-version }}
-      shell: bash
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
