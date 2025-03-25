@@ -11,6 +11,15 @@
 [x] admin
 [x] setup storybook
 [x] health check
-[] dto
+[x] dto
+[] backend actions build
+[] backend unit test
+[] pnpm package check
+[] open api
+[] req/res time middleware
+[] postgreSQL
+[] orm
 [] admin login jwt
+[] entrypoint
 [] admin login page
+[] local stack

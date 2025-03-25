@@ -1,0 +1,21 @@
+name: Node.js setup
+description: Setup Node.js
+
+inputs:
+  node-version:
+    description: "Node.js version"
+    type: string
+    required: true
+    default: "22.x"
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js v.${{ inputs.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: "pnpm"
