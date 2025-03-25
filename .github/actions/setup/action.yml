@@ -11,13 +11,36 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Corepack enabling
-      shell: bash
-      run: corepack enable
-
-    - name: Setup Node.js v.${{ inputs.node-version }}
-      uses: actions/setup-node@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
       with:
-        node-version: ${{ inputs.node-version }}
-        cache: "pnpm"
-        cache-dependency-path: "**/pnpm-lock.yaml"
+        version: 10
+        run_install: false
+
+    - name: Setup pnpm config
+      run: pnpm config set store-dir "$PNPM_CACHE_FOLDER"
+
+    # # Makes sure the pnpm store path exists (which is exactly what setup-node cares about)
+    #   - name: Verify PNPM Cache Directory
+    #     run: |
+    #       PNPM_STORE_PATH="$( pnpm store path --silent )"
+    #       if [ ! -d "$PNPM_STORE_PATH" ]; then
+    #         echo "PNPM store directory does not exist, creating it."
+    #         mkdir -p "$PNPM_STORE_PATH"
+    #       else
+    #         echo "PNPM store directory exists."
+    #       fi
+    #   - name: Setup package manager cache
+    #     uses: actions/setup-node@v4
+    #     with:
+    #       cache: 'pnpm'
+
+    # - name: Setup Node.js v.${{ inputs.node-version }}
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: ${{ inputs.node-version }}
+    #     cache: "pnpm"
+    #     run_install: false
+
+    #   - name: Setup pnpm config
+    #     run: pnpm config set store-dir "$PNPM_CACHE_FOLDER"
