@@ -12,6 +12,7 @@ runs:
   using: composite
   steps:
     - name: Corepack enabling
+      shell: bash
       run: corepack enable
 
     - name: Setup Node.js v.${{ inputs.node-version }}
