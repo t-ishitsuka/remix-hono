@@ -11,6 +11,9 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Corepack enabling
+      run: corepack enable
+
     - name: Setup Node.js v.${{ inputs.node-version }}
       uses: actions/setup-node@v4
       with:
