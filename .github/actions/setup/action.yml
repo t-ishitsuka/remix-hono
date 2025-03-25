@@ -11,10 +11,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout repository
-      shell: bash
-      uses: actions/checkout@v4
-
     - name: Setup Node.js v.${{ inputs.node-version }}
       shell: bash
       uses: actions/setup-node@v4
