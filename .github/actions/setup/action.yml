@@ -18,6 +18,7 @@ runs:
         run_install: false
 
     - name: Setup pnpm config
+      shell: bash
       run: pnpm config set store-dir "$PNPM_CACHE_FOLDER"
 
     # # Makes sure the pnpm store path exists (which is exactly what setup-node cares about)
