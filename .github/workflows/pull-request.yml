@@ -24,7 +24,7 @@ jobs:
     needs: constants
     steps:
       - name: echo
-        run: echo ${{ needs.constants.result.matrix }}
+        run: echo ${{ needs.constants.outputs.matrix }}
 
         # ${{ needs.constants.outputs }}
 
