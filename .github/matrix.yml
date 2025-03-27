@@ -1,1 +1,2 @@
-node-version: [22.x]
+include:
+  - node-version: 22.x
