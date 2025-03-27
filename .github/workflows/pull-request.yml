@@ -6,7 +6,18 @@ on:
 
 jobs:
   constants:
-    uses: ./.github/workflows/constant.yml
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.setup-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup matrix
+        id: setup-matrix
+        run: |
+          json=$(cat ./.github//matrix.yml| ruby -ryaml -rjson -e 'puts YAML.load(STDIN).to_json')
+          echo "matrix=${json}" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
