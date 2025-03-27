@@ -5,27 +5,11 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  # constants:
-  #   name: Set Constants
-  #   runs-on: ubuntu-latest
-  #   outputs:
-  #     matrix: ${{ github.event.inputs.node-version }}
-
-  build:
+  constants:
     uses: ./.github/workflows/constant.yml
 
-    # uses: ./.github/workflows/build.yml
-    # with:
-    #   matrix: '{"node-version": ["22.x"]}'
-    # runs-on: ubuntu-latest
-
-    # steps:
-    #   - name: Checkout repository
-    #     uses: actions/checkout@v4
-
-    #   - name: Setup Node.js
-    #     uses: ./.github/actions/setup
-    #     with:
-    #       node-version: ${{ matrix.node-version }}
-
-    #   # - name: Install dependencies
+  build:
+    needs: constants
+    uses: ./.github/workflows/build.yml
+    with:
+      matrix: ${{ needs.constants.outputs.matrix }}
