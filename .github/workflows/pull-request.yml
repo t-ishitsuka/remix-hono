@@ -9,7 +9,12 @@ jobs:
     uses: ./.github/workflows/constant.yml
 
   build:
+    runs-on: ubuntu-latest
     needs: constants
-    uses: ./.github/workflows/build.yml
-    with:
-      matrix: ${{ needs.constants.outputs.matrix }}
+    steps:
+      - name: echo
+        run: echo ${{ needs.constants.outputs }}
+
+    # uses: ./.github/workflows/build.yml
+    # with:
+    #   matrix: ${{ needs.constants.outputs.matrix }}
