@@ -3,7 +3,9 @@
   "extends": "@remix-hono-package/tsconfig/hono-config.json",
   "display": "API",
   "compilerOptions": {
+    "composite": true,
     "baseUrl": ".",
+    "incremental": true,
     "paths": {
       "~/*": ["./src/*"]
     },

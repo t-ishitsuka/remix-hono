@@ -3,10 +3,13 @@
   "extends": "@remix-hono-package/tsconfig/ui-config.json",
   "display": "UI",
   "compilerOptions": {
+    "composite": true,
     "baseUrl": ".",
+    "incremental": true,
     "paths": {
       "~/*": ["./src/*"]
     },
+    "outDir": "./dist",
     "rootDir": "."
   }
 }

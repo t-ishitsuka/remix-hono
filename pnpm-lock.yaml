@@ -24,6 +24,9 @@ catalogs:
     '@react-router/serve':
       specifier: ^7.2.0
       version: 7.2.0
+    '@storybook/react':
+      specifier: ^8.6.7
+      version: 8.6.7
     '@tailwindcss/vite':
       specifier: ^4.0.0
       version: 4.0.9
@@ -219,7 +222,7 @@ importers:
         specifier: ^8.6.7
         version: 8.6.7(@vitest/browser@3.0.9)(@vitest/runner@3.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.7(prettier@2.8.8))(vitest@3.0.9)
       '@storybook/react':
-        specifier: ^8.6.7
+        specifier: 'catalog:'
         version: 8.6.7(@storybook/test@8.6.7(storybook@8.6.7(prettier@2.8.8)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.7(prettier@2.8.8))(typescript@5.8.2)
       '@storybook/react-vite':
         specifier: ^8.6.7
@@ -410,6 +413,9 @@ importers:
       '@remix-hono-package/tsconfig':
         specifier: workspace:^
         version: link:../tsconfig
+      '@storybook/react':
+        specifier: 'catalog:'
+        version: 8.6.7(@storybook/test@8.6.7(storybook@8.6.7(prettier@2.8.8)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.7(prettier@2.8.8))(typescript@5.8.2)
       '@types/node':
         specifier: 'catalog:'
         version: 20.17.22

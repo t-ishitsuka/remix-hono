@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "build": "echo \"$npm_package_name: No build script specified\" && exit 0",
-    "dev": "echo \"$npm_package_name: No dev script specified\" && exit 0"
+    "dev": "echo \"$npm_package_name: No dev script specified\" && exit 0",
+    "typecheck": "echo \"$npm_package_name: No typecheck script specified\" && exit 0"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {

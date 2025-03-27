@@ -20,7 +20,7 @@ export async function loader() {
 
 export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
   const serverData = await serverLoader();
-  const response = await healthCheckClient.api.v1["health-check"][2].$get();
+  const response = await healthCheckClient.api.v1["health-check"].$get();
 
   return { ...serverData, message2: (await response.json()).message };
 }
