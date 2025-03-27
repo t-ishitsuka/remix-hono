@@ -30,5 +30,8 @@ runs:
     - name: Setup package manager cache v.${{ inputs.node-version }}
       uses: actions/setup-node@v4
       with:
-        # node-version: ${{ inputs.node-version }}
+        node-version: ${{ inputs.node-version }}
         cache: "pnpm"
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
