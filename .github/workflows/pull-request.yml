@@ -5,6 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
+  # TODO add a reusable job that sets up the matrix
   constants:
     runs-on: ubuntu-latest
     outputs:

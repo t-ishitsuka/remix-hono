@@ -3,11 +3,6 @@ name: Node.js setup
 on:
   workflow_call:
     inputs:
-      # node-version:
-      #   description: "Node.js version"
-      #   type: string
-      #   required: true
-      #   default: "22.x"
       matrix:
         description: "Matrix of Node.js versions"
         type: string
@@ -31,3 +26,6 @@ jobs:
 
       - name: Install Turbo
         run: npm install -g turbo@2.4.2
+
+      - name: Run build
+        run: turbo build
