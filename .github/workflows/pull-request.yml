@@ -1,0 +1,33 @@
+name: Pull request workflow
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  # TODO add a reusable job that sets up the matrix
+  constants:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.setup-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup matrix
+        id: setup-matrix
+        run: |
+          json=$(cat ./.github//matrix.yml| ruby -ryaml -rjson -e 'puts YAML.load(STDIN).to_json')
+          echo "matrix=${json}" >> $GITHUB_OUTPUT
+
+  build:
+    needs: constants
+    uses: ./.github/workflows/build.yml
+    with:
+      matrix: ${{ needs.constants.outputs.matrix }}
+
+  typecheck:
+    needs: constants
+    uses: ./.github/workflows/typecheck.yml
+    with:
+      matrix: ${{ needs.constants.outputs.matrix }}

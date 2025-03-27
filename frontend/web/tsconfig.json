@@ -14,5 +14,13 @@
     "**/.server/**/*",
     "**/.client/**/*",
     ".react-router/types/**/*"
+  ],
+  "references": [
+    {
+      "path": "../../backend/api"
+    },
+    {
+      "path": "../../packages/ui"
+    }
   ]
 }

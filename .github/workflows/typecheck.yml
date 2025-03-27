@@ -1,0 +1,31 @@
+name: Typescript typecheck
+
+on:
+  workflow_call:
+    inputs:
+      matrix:
+        description: "Matrix of Node.js versions"
+        type: string
+        required: true
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix: ${{ fromJson(inputs.matrix) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: ./.github/actions/setup
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Turbo
+        run: npm install -g turbo@2.4.2
+
+      - name: Run typecheck
+        run: turbo typecheck
