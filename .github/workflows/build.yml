@@ -1,4 +1,4 @@
-name: Node.js setup
+name: Node.js build
 
 on:
   workflow_call:
