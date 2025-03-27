@@ -13,7 +13,8 @@ jobs:
     needs: constants
     steps:
       - name: echo
-        run: echo ${{ needs.constants.outputs }}
+        run: echo ${{ fromJson(needs.constants.outputs) }}
+        # ${{ needs.constants.outputs }}
 
     # uses: ./.github/workflows/build.yml
     # with:
