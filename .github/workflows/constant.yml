@@ -17,4 +17,6 @@ jobs:
         id: setup-matrix
         run: |
           json=$(cat ./.github//matrix.yml| ruby -ryaml -rjson -e 'puts YAML.load(STDIN).to_json')
-          echo "matrix=${json}" >> $GITHUB_OUTPUT
+          echo "${json}"
+
+        # echo "matrix=${json}" >> $GITHUB_OUTPUT
