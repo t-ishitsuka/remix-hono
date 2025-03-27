@@ -3,24 +3,32 @@ name: Node.js setup
 on:
   workflow_call:
     inputs:
-      node-version:
-        description: "Node.js version"
+      # node-version:
+      #   description: "Node.js version"
+      #   type: string
+      #   required: true
+      #   default: "22.x"
+      matrix:
+        description: "Matrix of Node.js versions"
         type: string
         required: true
-        default: "22.x"
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    # strategy:
+    #   matrix:
+    #     node-version: [22.x]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: ./.github/actions/setup
-        with:
-          node-version: ${{ inputs.node-version }}
+      # - name: Setup Node.js
+      #   uses: ./.github/actions/setup
+      #   with:
+      #     node-version: ${{ inputs.node-version }}
 
-      - name: Install Turbo
-        run: npm install -g turbo@2.4.2
+      # - name: Install Turbo
+      #   run: npm install -g turbo@2.4.2

@@ -22,7 +22,7 @@ RUN echo "node ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Install global node packages
 RUN npm install -g pnpm@10.4.1
-RUN npm install turbo@2.4.2 --global
+RUN npm install -g turbo@2.4.2
 
 # User
 USER node
