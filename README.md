@@ -17,7 +17,7 @@
 [x] install
 [x] reuseable workflow
 [x] build
-[] lint, actions
+[x] lint, actions
 [] backend unit test
 [] pnpm package check
 [] open api
