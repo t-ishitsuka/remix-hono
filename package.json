@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "lint": "biome lint",
     "typecheck": "turbo typecheck",
     "storybook": "pnpm --filter @remix-hono-frontend/story run storybook"
   },

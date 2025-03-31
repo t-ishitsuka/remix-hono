@@ -12,12 +12,12 @@
 [x] setup storybook
 [x] health check
 [x] dto
-[] backend actions build
-[] composite action
-[] install
-[] reuseable workflow
-[] build
-[] lint
+[x] backend actions build
+[x] composite action
+[x] install
+[x] reuseable workflow
+[x] build
+[] lint, actions
 [] backend unit test
 [] pnpm package check
 [] open api
