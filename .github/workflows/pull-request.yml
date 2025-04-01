@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  # TODO add a reusable job that sets up the matrix
+  # TODO: Reuseable ワークフローに纏める
   constants:
     runs-on: ubuntu-latest
     outputs:
@@ -20,8 +20,8 @@ jobs:
           json=$(cat ./.github//matrix.yml| ruby -ryaml -rjson -e 'puts YAML.load(STDIN).to_json')
           echo "matrix=${json}" >> $GITHUB_OUTPUT
 
+  # TODO: Reuseable ワークフローに纏める
   check-diffs:
-    needs: constants
     runs-on: ubuntu-latest
     outputs:
       backend_api: ${{ steps.diffs.outputs.backend_api_any_changed }}
