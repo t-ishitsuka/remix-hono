@@ -1,0 +1,28 @@
+name: Backend API test
+
+on:
+  workflow_call:
+    inputs:
+      matrix:
+        description: "Matrix of Node.js versions"
+        type: string
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix: ${{ fromJson(inputs.matrix) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: ./.github/actions/setup
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Test
+        run: pnpm --filter backend/api test

@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  # TODO add a reusable job that sets up the matrix
+  # TODO: Reuseable ワークフローに纏める
   constants:
     runs-on: ubuntu-latest
     outputs:
@@ -19,6 +19,21 @@ jobs:
         run: |
           json=$(cat ./.github//matrix.yml| ruby -ryaml -rjson -e 'puts YAML.load(STDIN).to_json')
           echo "matrix=${json}" >> $GITHUB_OUTPUT
+
+  # TODO: Reuseable ワークフローに纏める
+  check-diffs:
+    runs-on: ubuntu-latest
+    outputs:
+      backend_api: ${{ steps.diffs.outputs.backend_api_any_changed }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Detect changed files
+        uses: tj-actions/changed-files@v45
+        id: diffs
+        with:
+          files_yaml_from_source_file: .github/packages.yml
 
   build:
     needs: constants
@@ -35,5 +50,12 @@ jobs:
   lint:
     needs: constants
     uses: ./.github/workflows/lint.yml
+    with:
+      matrix: ${{ needs.constants.outputs.matrix }}
+
+  backend_api_test:
+    needs: [constants, check-diffs]
+    if: needs.check-diffs.outputs.backend_api == 'true'
+    uses: ./.github/workflows/backend_api_test.yml
     with:
       matrix: ${{ needs.constants.outputs.matrix }}
