@@ -20,6 +20,28 @@ describe("ValueObject", () => {
       }
     );
   });
+
+  describe("equals", () => {
+    it.each`
+      description    | value1              | value2              | expected
+      ${"string"}    | ${"test"}           | ${"test"}           | ${true}
+      ${"number"}    | ${123}              | ${123}              | ${true}
+      ${"boolean"}   | ${true}             | ${true}             | ${true}
+      ${"null"}      | ${null}             | ${null}             | ${true}
+      ${"undefined"} | ${undefined}        | ${undefined}        | ${true}
+      ${"array"}     | ${[1, 2, 3]}        | ${[1, 2, 3]}        | ${true}
+      ${"object"}    | ${{ key: "value" }} | ${{ key: "value" }} | ${true}
+      ${"different"} | ${{ key: "value" }} | ${{ key: "other" }} | ${false}
+    `(
+      "should return $expected for $description",
+      ({ description, value1, value2, expected }) => {
+        const vo1 = new TestValueObject(value1);
+        const vo2 = new TestValueObject(value2);
+
+        expect(vo1.equals(vo2)).toEqual(expected);
+      }
+    );
+  });
 });
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
