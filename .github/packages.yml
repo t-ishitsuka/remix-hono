@@ -1,0 +1,6 @@
+backend_api:
+  - "backend/api/src/**"
+  - "backend/api/package.json"
+  - "backend/api/tsconfig.json"
+  - "backend/api/tsconfig.build.json"
+  - "backend/api/vitest.config.ts"

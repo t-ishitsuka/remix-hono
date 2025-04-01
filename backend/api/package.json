@@ -2,7 +2,7 @@
   "name": "@remix-hono-backend/api",
   "version": "0.1.0",
   "scripts": {
-    "build": "tsc --project tsconfig.build.json",
+    "build": "tsc",
     "dev": "tsx watch src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
