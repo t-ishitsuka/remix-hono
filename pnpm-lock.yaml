@@ -132,6 +132,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.8.2
+      vite-tsconfig-paths:
+        specifier: 'catalog:'
+        version: 5.1.4(typescript@5.8.2)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.3))
       vitest:
         specifier: 'catalog:'
         version: 3.0.9(@types/node@20.17.22)(@vitest/browser@3.0.9)(jiti@2.4.2)(lightningcss@1.29.1)(msw@2.7.3(@types/node@20.17.22)(typescript@5.8.2))(tsx@4.19.3)
@@ -7423,6 +7426,17 @@ snapshots:
       tsconfck: 3.1.5(typescript@5.8.2)
     optionalDependencies:
       vite: 5.4.14(@types/node@20.17.22)(lightningcss@1.29.1)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
+  vite-tsconfig-paths@5.1.4(typescript@5.8.2)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.3)):
+    dependencies:
+      debug: 4.4.0
+      globrex: 0.1.2
+      tsconfck: 3.1.5(typescript@5.8.2)
+    optionalDependencies:
+      vite: 6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.3)
     transitivePeerDependencies:
       - supports-color
       - typescript

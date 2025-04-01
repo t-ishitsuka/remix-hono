@@ -2,7 +2,7 @@
   "name": "@remix-hono-backend/api",
   "version": "0.1.0",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "dev": "tsx watch src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -26,6 +26,7 @@
     "@types/node": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "vite-tsconfig-paths": "catalog:"
   }
 }
