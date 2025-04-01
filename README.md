@@ -17,8 +17,12 @@
 [x] install
 [x] reuseable workflow
 [x] build
-[] lint, actions
-[] backend unit test
+[x] lint, actions
+[x] vitest
+[x] backend unit test
+[] test coverage
+[] backend test action
+[] 変更を感知してそのパッケージだけ actions を回す
 [] pnpm package check
 [] open api
 [] req/res time middleware
