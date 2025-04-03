@@ -3,8 +3,14 @@ import { cors } from "hono/cors";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { setupOpenApi } from "~/presentation/handlers/api/v1/openapi/OpenApiHandler";
 import { apiV1Handler } from "~/presentation/handlers/api/v1/ApiV1Handler";
+import { timing } from "hono/timing";
+import type { TimingVariables } from "hono/timing";
 
-let app = new OpenAPIHono();
+type Variables = TimingVariables;
+
+let app = new OpenAPIHono<{ Variables: Variables }>();
+
+app.use(timing());
 
 app.use(
   "*",

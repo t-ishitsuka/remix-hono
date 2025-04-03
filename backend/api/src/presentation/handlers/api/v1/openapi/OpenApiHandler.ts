@@ -1,9 +1,12 @@
 import type { OpenAPIHono } from "@hono/zod-openapi";
 import { OpenApiV1 } from "~/domains/openapi/v1/OpenApiV1";
+import type { TimingVariables } from "hono/timing";
+
+type Variables = TimingVariables;
 
 const openApiV1 = new OpenApiV1("0.1.0");
 
-export const setupOpenApi = (app: OpenAPIHono) => {
+export const setupOpenApi = (app: OpenAPIHono<{ Variables: Variables }>) => {
   app
     .doc(openApiV1.getJsonUrl().latest(), {
       openapi: openApiV1.getOpenApiVersion().get(),

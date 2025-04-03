@@ -24,11 +24,13 @@
 [x] backend test action
 [x] 変更を感知してそのパッケージだけ actions を回す
 [] pnpm package check
-[] open api
-[] req/res time middleware
+[x] open api
+[x] req/res time middleware
 [] postgreSQL
 [] orm
 [] admin login jwt
 [] entrypoint
 [] admin login page
 [] local stack
+
+---
