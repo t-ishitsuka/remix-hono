@@ -1,9 +1,10 @@
 import { serve } from "@hono/node-server";
-import { Hono } from "hono";
 import { cors } from "hono/cors";
+import { OpenAPIHono } from "@hono/zod-openapi";
+import { setupOpenApi } from "~/presentation/handlers/api/v1/openapi/OpenApiHandler";
 import { apiV1Handler } from "~/presentation/handlers/api/v1/ApiV1Handler";
 
-const app = new Hono();
+let app = new OpenAPIHono();
 
 app.use(
   "*",
@@ -16,6 +17,7 @@ app.use(
 );
 
 app.route("/", apiV1Handler);
+app = setupOpenApi(app);
 
 serve(
   {
