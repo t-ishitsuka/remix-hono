@@ -1,5 +1,6 @@
 import { createRoute, OpenAPIHono, type RouteHandler } from "@hono/zod-openapi";
 import { StringValueObject } from "~/domains/libs/base/StringValueObject";
+import { ResponseCode } from "~/domains/libs/response/ResponseCode";
 import { OpenApiTag } from "~/domains/openapi/v1/OpenApiTag";
 import {
   HealthCheckResponse,
@@ -32,7 +33,7 @@ const healthCheck: RouteHandler<typeof healthCheckRoute> = (c) => {
     new HealthCheckResponse({
       message: new StringValueObject("ok"),
     }),
-    200
+    ResponseCode.OK
   );
 };
 
