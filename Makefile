@@ -53,3 +53,7 @@ down:		## Docker コンテナの削除
 .PHONY: node
 node: 		## Node コンテナに接続
 	docker compose exec node bash
+
+.PHONY: pg
+pg: 		## PostgreSQL Server に接続
+	docker compose exec pgsql bash -c 'psql -U user local'

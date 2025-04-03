@@ -1,5 +1,8 @@
 name: remix-hono-template
 
+volumes:
+  pgdata:
+
 networks:
   remix-hono-network:
     external: true
@@ -23,3 +26,19 @@ services:
       - 6006:6006
     volumes:
       - .:/app
+
+  pgsql:
+    <<: *defaults
+    container_name: pgsql
+    build:
+      context: .
+      dockerfile: ./docker/local/pgsql/Dockerfile
+    ports:
+      - 5432:5432
+    environment:
+      PGPASSWORD: password
+      POSTGRES_DB: local
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data

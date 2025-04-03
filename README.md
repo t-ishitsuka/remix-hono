@@ -26,7 +26,7 @@
 [] pnpm package check
 [x] open api
 [x] req/res time middleware
-[] postgreSQL
+[x] postgreSQL
 [] orm
 [] admin login jwt
 [] entrypoint
