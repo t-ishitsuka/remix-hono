@@ -20,9 +20,9 @@
 [x] lint, actions
 [x] vitest
 [x] backend unit test
-[] test coverage
-[] backend test action
-[] 変更を感知してそのパッケージだけ actions を回す
+[] test coverage 収集、表示
+[x] backend test action
+[x] 変更を感知してそのパッケージだけ actions を回す
 [] pnpm package check
 [] open api
 [] req/res time middleware

@@ -1,16 +1,46 @@
-import { Hono } from "hono";
+import { createRoute, OpenAPIHono, type RouteHandler } from "@hono/zod-openapi";
 import { StringValueObject } from "~/domains/libs/base/StringValueObject";
-import { HealthCheckResponse } from "~/presentation/handlers/api/v1/healthcheck/dto/HealthCheckResponse";
+import { ResponseCode } from "~/domains/libs/response/ResponseCode";
+import { OpenApiTag } from "~/domains/openapi/v1/OpenApiTag";
+import {
+  HealthCheckResponse,
+  HealthCheckResponseSchema,
+} from "~/presentation/handlers/api/v1/healthcheck/dto/HealthCheckResponse";
 
-const healthCheckHandler = new Hono()
-  .basePath("/api/v1/health-check")
-  .get("/", (c) => {
-    return c.json(
-      new HealthCheckResponse({
-        message: new StringValueObject("ok"),
-      })
-    );
-  });
+/**
+ * Health check
+ */
+const healthCheckRoute = createRoute({
+  method: "get",
+  summary: "ヘルスチェック",
+  description: "アプリケーションヘルスチェック",
+  tags: [OpenApiTag.HealthCheck.get()],
+  path: "/api/v1/health-check",
+  responses: {
+    200: {
+      description: "アプリケーションは健全",
+      content: {
+        "application/json": {
+          schema: HealthCheckResponseSchema,
+        },
+      },
+    },
+  },
+});
 
-export { healthCheckHandler };
-export type HealthCheckRouteType = typeof healthCheckHandler;
+const healthCheck: RouteHandler<typeof healthCheckRoute> = (c) => {
+  return c.json(
+    new HealthCheckResponse({
+      message: new StringValueObject("ok"),
+    }),
+    ResponseCode.OK
+  );
+};
+
+const healthCheckHandlers = new OpenAPIHono().openapi(
+  healthCheckRoute,
+  healthCheck
+);
+
+export { healthCheckHandlers };
+export type HealthCheckHandlersType = typeof healthCheckHandlers;

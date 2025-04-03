@@ -18,15 +18,17 @@
   "type": "module",
   "dependencies": {
     "@hono/node-server": "catalog:",
+    "@hono/zod-openapi": "catalog:",
     "dotenv": "catalog:",
-    "hono": "catalog:"
+    "hono": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@remix-hono-package/tsconfig": "workspace:^",
     "@types/node": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:",
-    "vite-tsconfig-paths": "catalog:"
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:"
   }
 }
