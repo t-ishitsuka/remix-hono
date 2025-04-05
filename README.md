@@ -27,7 +27,12 @@
 [x] open api
 [x] req/res time middleware
 [x] postgreSQL
-[] orm
+[x] install drizzle
+[x] install schema
+[] users table
+[] generate command
+[] migrate command
+[] ulid
 [] admin login jwt
 [] entrypoint
 [] admin login page
