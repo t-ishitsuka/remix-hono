@@ -1,17 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@remix-hono-package/tsconfig/hono-config.json",
-  "display": "API",
+  "extends": "@remix-hono-package/tsconfig/base-config.json",
+  "display": "DATABASE",
   "compilerOptions": {
     "baseUrl": ".",
-    "composite": true,
-    "incremental": true,
     "outDir": "./dist",
     "paths": {
       "~/*": ["./src/*"]
     },
     "rootDir": ".",
-    "types": ["vitest/globals"]
+    "verbatimModuleSyntax": false
   },
   "exclude": ["node_modules", "dist"]
 }

@@ -13,7 +13,16 @@
     "yarn": "Use pnpm package manager.",
     "pnpm": ">=10.4.1"
   },
+  "dependencies": {
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "pg": "catalog:"
+  },
   "devDependencies": {
+    "@remix-hono-package/tsconfig": "workspace:^",
+    "@types/pg": "catalog:",
+    "drizzle-kit": "catalog:",
+    "tsx": "catalog:",
     "typescript": "catalog:"
   }
 }
